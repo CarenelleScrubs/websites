@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carenelle Scrubs | Premium Medical Apparel</title>
+    <!-- Import Elegant Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --baby-pink: #FFF0F2;
+            --blush: #FFE3E7;
+            --rose-gold: #B76E79;
+            --rose-gold-hover: #A35C67;
+            --dark-text: #332224;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: var(--dark-text);
+            background-color: var(--white);
+            line-height: 1.7;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            color: var(--dark-text);
+        }
+
+        /* Header Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: var(--white);
+            border-bottom: 1px solid var(--blush);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            letter-spacing: 3px;
+            color: var(--rose-gold);
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-text);
+            margin-left: 30px;
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        nav a:hover {
+            color: var(--rose-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--baby-pink) 0%, var(--blush) 100%);
+            padding: 120px 5%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+        }
+
+        .hero h1 {
+            font-size: 54px;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 16px;
+            max-width: 600px;
+            margin-bottom: 40px;
+            color: #554446;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--rose-gold);
+            color: var(--white);
+            padding: 16px 45px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 11px;
+            font-weight: 500;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(183, 110, 121, 0.25);
+            transition: all 0.4s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--rose-gold-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(183, 110, 121, 0.35);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--rose-gold);
+            border: 1px solid var(--rose-gold);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(183, 110, 121, 0.05);
+            color: var(--rose-gold-hover);
+            border-color: var(--rose-gold-hover);
+            box-shadow: 0 8px 25px rgba(183, 110, 121, 0.05);
+        }
+
+        /* Value Props Section */
+        .props {
+            padding: 90px 8%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .prop-card h3 {
+            font-size: 28px;
+            color: var(--rose-gold);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            font-style: italic;
+        }
+
+        .prop-card p {
+            color: #665557;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Products Grid */
+        .products {
+            padding: 100px 5%;
+            background-color: var(--baby-pink);
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .products .section-subtitle {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--rose-gold);
+            margin-bottom: 50px;
+            font-weight: 500;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 0px;
+            border: 1px solid var(--blush);
+            transition: all 0.4s ease;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(183, 110, 121, 0.12);
+        }
+
+        .product-image-container {
+            width: 100%;
+            height: 480px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            background-color: #FAFAFA;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.03);
+        }
+
+        .product-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        .product-card p.price {
+            color: var(--rose-gold);
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .product-card p.desc {
+            color: #665557;
+            font-size: 13px;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        /* Our Story Section */
+        .our-story {
+            padding: 120px 10%;
+            background-color: var(--white);
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .our-story h2 {
+            font-size: 42px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .our-story .story-subtitle {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--rose-gold);
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+
+        .story-divider {
+            width: 60px;
+            height: 1px;
+            background-color: var(--rose-gold);
+            margin: 0 auto 40px auto;
+        }
+
+        .our-story p {
+            font-size: 16px;
+            color: #4A3638;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-text);
+            color: var(--baby-pink);
+            padding: 80px 5% 40px 5%;
+            text-align: center;
+        }
+
+        .footer-newsletter h3 {
+            font-size: 36px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+
+        .footer-newsletter p {
+            margin-bottom: 35px;
+            color: #D6C2C4;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .email-input {
+            padding: 15px 25px;
+            width: 100%;
+            max-width: 350px;
+            border: 1px solid var(--rose-gold);
+            background-color: transparent;
+            color: var(--white);
+            border-radius: 0;
+            outline: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .email-input::placeholder {
+            color: #A59294;
+        }
+
+        .submit-btn {
+            padding: 15px 35px;
+            background-color: var(--rose-gold);
+            color: var(--white);
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 2px;
+            font-size: 11px;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--rose-gold-hover);
+        }
+
+        .footer-bottom {
+            margin-top: 60px;
+            font-size: 11px;
+            color: #A59294;
+            border-top: 1px solid #4A3638;
+            padding-top: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px 5%;
+            }
+            nav a {
+                margin: 0 12px;
+            }
+            .hero h1 {
+                font-size: 38px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+            }
+            .btn {
+                width: 100%;
+                text-align: center;
+                padding: 16px 20px;
+            }
+            .our-story p {
+                text-align: center;
+            }
+            .footer-newsletter {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            .email-input, .submit-btn {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation Bar -->
+    <header>
+        <div class="logo-container">
+            <div class="brand-name">Carenelle</div>
+        </div>
+        <nav>
+            <a href="#shop">Shop All</a>
+            <a href="#story">Our Story</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Elegance is an Everyday Essential.</h1>
+        <p>Step into your shift with confidence. High-performance medical apparel featuring sophisticated silhouettes, premium fabrics, and a flawless, tailored fit.</p>
+        <div class="hero-buttons">
+            <a href="#shop" class="btn">Explore Collection</a>
+            <a href="catalog.pdf" download class="btn btn-nav btn-secondary">Download Full Catalog (PDF)</a>
+        </div>
+    </section>
+
+    <!-- Brand Value Proposition -->
+    <section class="props">
+        <div class="prop-card">
+            <h3>Tailored Elegance</h3>
+            <p>Sculpted silhouettes that contour, flatter, and elevate your professional aesthetic flawlessly.</p>
+        </div>
+        <div class="prop-card">
+            <h3>Deep Core Comfort</h3>
+            <p>Ultra-soft, 4-way stretch fabric designed to keep you completely structured yet comfortable through long shifts.</p>
+        </div>
+        <div class="prop-card">
+            <h3>Uncompromising Utility</h3>
+            <p>Intelligently placed deep pockets engineered to securely house your essential tools without adding bulk.</p>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="products" id="shop">
+        <h2>The Signature Pieces</h2>
+        <div class="section-subtitle">Royal Comfort For The Frontlines</div>
+        <div class="grid">
+            
+            <!-- Item 1 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="1000105561.jpg" alt="The Royal Burgundy Set" class="product-img">
+                </div>
+                <h4>The Royal Burgundy Set</h4>
+                <p class="price">$98.00</p>
+                <p class="desc">Command your shift with royal presence. Features a structured, high-neck mandarin collar with a hidden snap placket for a completely clean, seamless finish.</p>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="1000105562.jpg" alt="The Empress Jogger Set" class="product-img">
+                </div>
+                <h4>The Empress Jogger Set</h4>
+                <p class="price">$98.00</p>
+                <p class="desc">Boasts beautifully tailored side ruching along the calves, delivering a sophisticated twist to the classic jogger silhouette while ensuring absolute comfort.</p>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="1000113584.jpg" alt="The Forever Happy Neon Set" class="product-img">
+                </div>
+                <h4>The Forever Happy Neon Set</h4>
+                <p class="price">$95.00</p>
+                <p class="desc">Bring vibrant energy to your clinical routine. Features a modern half-zip collar accent and structured cargo detailing engineered to trim your profile beautifully.</p>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="1000105602.jpg" alt="The Sovereign V-Neck" class="product-img">
+                </div>
+                <h4>The Sovereign V-Neck</h4>
+                <p class="price">$52.00</p>
+                <p class="desc">A refined, classic V-neck tailored for a powerful, athletic fit. Crafted with moisture-wicking technology and high-end minimal stitching for a crisp drape.</p>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="1000105493.jpg" alt="Cinch Corset Flare Set" class="product-img">
+                </div>
+                <h4>The Cinch-Waist Corset Set</h4>
+                <p class="price">$110.00</p>
+                <p class="desc">A groundbreaking fusion of high-fashion structure and medical utility. Features an adjustable, cross-laced ribbon corset midsection paired with graceful flare trousers.</p>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="1000105459.jpg" alt="Luxe Lavender Set" class="product-img">
+                </div>
+                <h4>The Luxe Lavender Set</h4>
+                <p class="price">$95.00</p>
+                <p class="desc">Gentle elegance meets performance. Punctuated with unique, metallic-rimmed eyelet cross-lacing details across the shoulders for a delicate touch of luxury.</p>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="1000105476.jpg" alt="The Serene Lavender Set" class="product-img">
+                </div>
+                <h4>The Serene Lavender Set</h4>
+                <p class="price">$95.00</p>
+                <p class="desc">Crafted from a lightweight, premium four-way stretch fabric that falls beautifully, providing a pristine, unwrinkled look from morning rounds to evening handovers.</p>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="1000105480.jpg" alt="The Contoured Gathered Set" class="product-img">
+                </div>
+                <h4>The Contoured Gathered Set</h4>
+                <p class="price">$105.00</p>
+                <p class="desc">Utilizes a stunning sunburst gathered twist-front waistline to create an elegant cinched effect, while a delicate split V-neck frames the face beautifully.</p>
+            </div>
+
+            <!-- Item 9 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="1000097408.jpg" alt="The Emerald Gold-Zip Set" class="product-img">
+                </div>
+                <h4>The Emerald Gold-Zip Set</h4>
+                <p class="price">$115.00</p>
+                <p class="desc">Rich emerald tones paired with striking gold hardware. Features an elegant zippered high-collar top and trousers punctuated by exposed gold zipper pockets.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="our-story" id="story">
+        <h2>Our Story</h2>
+        <div class="story-subtitle">Empowering the Frontlines</div>
+        <div class="story-divider"></div>
+        <p>As healthcare workers, we spend our lives caring for others, moving through demanding shifts that test our strength, resilience, and dedication. But for too long, medical apparel forced us to choose between rigid utility and shapeless designs.</p>
+        <p>Carenelle was born out of a desire to change that narrative. Founded by a dedicated healthcare professional, our brand blends advanced clinical functionality with a high-end, sophisticated aesthetic. We believe that walking down a hospital corridor should feel no different than stepping onto a runway—you deserve to feel structured, empowered, and effortlessly beautiful.</p>
+        <p>Every contour, gold accent, and stitch is meticulously engineered. From deep core engagement support to sculpted silhouettes that transition flawlessly from a hectic shift to your post-work life, Carenelle is designed for the modern healthcare leader who refuses to compromise on elegance. This isn’t just medical apparel. It is your daily armor, crafted with royal comfort for the frontlines.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-newsletter">
+            <h3>Join The Inner Circle</h3>
+            <p>Subscribe for early access to limited-edition color drops, private sales, and community updates.</p>
+            <div style="display: inline-flex; flex-wrap: wrap; justify-content: center; width: 100%;">
+                <input type="email" class="email-input" placeholder="Enter your email address">
+                <button type="submit" class="submit-btn">Join Now</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Carenelle Scrubs. Designed with Royal Elegance. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
