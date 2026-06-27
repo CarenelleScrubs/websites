@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <div class="logo-container">
-    <img src="logo.png" alt="Carenelle Scrubs Logo">
-        .logo-container img {
-    width: 20px;
-    height: 30px;
-}
-</div>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carenelle Scrubs | Premium Medical Apparel</title>
@@ -15,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --baby-pink: #FFF0F2;
@@ -25,7 +17,6 @@
             --dark-text: #332224;
             --white: #FFFFFF;
         }
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -40,13 +31,10 @@
             font-weight: 300;
             -webkit-font-smoothing: antialiased;
         }
-
-        h1, h2, h3 {
+    h1, h2, h3 {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 400;
             color: var(--dark-text);
-        }
-
         /* Header Navigation */
         header {
             display: flex;
@@ -58,8 +46,16 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-        }
-
+        </style>
+        </head>
+<body>
+    <header style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 20px 0;">
+        <div class="logo-container">
+            <img src="logo.png" alt="Carenelle Scrubs Logo" style="height: 50px; width: auto;">
+        </div>
+        <h1 style="margin: 0; font-size: 24px; color: var(--rose-gold);">Carenelle Scrubs</h1>
+    </header>
+</body>
         .logo-container {
             display: flex;
             align-items: center;
